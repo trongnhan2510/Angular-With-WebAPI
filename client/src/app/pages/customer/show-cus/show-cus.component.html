@@ -1,0 +1,55 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary float-right" style="margin: 5px 404px 5px 0px" data-toggle="modal"
+  data-target="#exampleModal" (click)="addClick()" data-backdrop="static" data-keyboard="false">
+  Add New Customer
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{ModelTitle}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeClick()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-add-edit-cus [cus]="cus" *ngIf="ActivateAddEditCusComp"></app-add-edit-cus>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Customer_ID</th>
+        <th>Customer_Name</th>
+        <th>Address</th>
+        <th>Telephone</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of customers">
+        <td>{{item.customer_ID}}</td>
+        <td>{{item.customer_Name}}</td>
+        <td>{{item.address}}</td>
+        <td>{{item.telephone}}</td>
+        <td>
+          <button type="button" class="btn btn-primary float-right m-2" (click)="deleteClick(item.customer_ID)">
+            Delete
+          </button>
+          <button type="button" class="btn btn-primary float-right m-2" data-toggle="modal" data-target="#exampleModal"
+            (click)="editClick(item)" data-backdrop="static" data-keyboard="false">
+            Edit
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

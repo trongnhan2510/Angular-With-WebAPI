@@ -1,0 +1,58 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary float-right" style="margin: 5px 404px 5px 0px" data-toggle="modal"
+  data-target="#exampleModal" (click)="addClick()" data-backdrop="static" data-keyboard="false">
+  Add New Order
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{ModelTitle}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)=closeClick()>
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-add-edit-order [order]='order' *ngIf="ActivateAddEditEmpComp"></app-add-edit-order>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Order_ID</th>
+                <th>SaleOfDate</th>
+                <th>Total</th>
+                <th>Customer_ID</th>
+                <th>Employee_ID</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let order of listOrders">
+                <td>{{order.order_ID}}</td>
+                <td>{{order.saleofDate | date:"dd/MM/yyyy"}}</td>
+                <td>{{order.total}}</td>
+                <td>{{order.customer_ID}}</td>
+                <td>{{order.employee_ID}}</td>
+                <td>
+                  <button type="button" class="btn btn-primary float-right m-2" 
+                  (click)="deleteClick(order.order_ID)" >
+                      Delete
+                  </button>
+                  <button type="button" class="btn btn-primary float-right m-2" 
+                      data-toggle="modal" data-target="#exampleModal"
+                      (click)="editClick(order)" data-backdrop="static" data-keyboard="false">
+                          Edit
+                  </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
