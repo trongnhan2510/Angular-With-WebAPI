@@ -63,6 +63,7 @@ export class AddEditOrderComponent implements OnInit, DoCheck {
     };
     this.service.addOrder(order).subscribe((data:any)=>{
       alert("Add new Order Success");
+      window.location.reload();
     });
   } 
   updateOrder(){
@@ -76,6 +77,7 @@ export class AddEditOrderComponent implements OnInit, DoCheck {
     console.log(order);
     this.service.updateOrder(order.order_ID,order).subscribe((data:any)=>{
       alert("Edit new Order Success");
+      window.location.reload();
     });
   }
 }

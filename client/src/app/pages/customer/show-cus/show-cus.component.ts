@@ -67,4 +67,10 @@ constructor(private service: SharedService){}
       });
     }
   }
+  SearchString(event:any)
+  {
+    this.service.getCusbyName(event.value).subscribe((data:any)=>{
+      this.customers = data as Customer[];
+    });
+  }
 }

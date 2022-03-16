@@ -38,6 +38,7 @@ export class AddEditEmpComponent implements OnInit {
     this.service.addEmployee(employee).subscribe((data:any)=>
     {
       alert("Add new Employee Success");
+      window.location.reload();
     });
   }
   updateEmployee()
@@ -54,6 +55,7 @@ export class AddEditEmpComponent implements OnInit {
     this.service.updateEmployee(this.employee_ID,employee).subscribe((data:any)=>
     {
       alert("Edit new Employee Success");
+      window.location.reload();
     });
   }
 }

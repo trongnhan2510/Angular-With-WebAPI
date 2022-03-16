@@ -32,7 +32,8 @@ export class AddEditCusComponent implements OnInit {
       telephone:this.telephone
     }
     this.service.addCustomer(val).subscribe((data:any)=>{
-      alert("Add new Customer Success")
+      alert("Add new Customer Success");
+      window.location.reload();
     });
   }
   updateCustomer(){
@@ -43,6 +44,7 @@ export class AddEditCusComponent implements OnInit {
     };
     this.service.updateCustomer(this.customer_ID,val).subscribe((data:any)=>{
       alert("Edit new Customer Success");
+      window.location.reload();
     });
   }
 }

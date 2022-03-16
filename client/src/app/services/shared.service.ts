@@ -1,9 +1,5 @@
 import { Injectable } from '@angular/core';
 import {HttpClientModule, HttpClient, HttpHeaders} from '@angular/common/http';
-import { Customer } from '../Models/Customer';
-import {Routes} from '@angular/router';
-import { Employee } from '../Models/Employee';
-import { RestAPIService } from './rest-api.service';
 
 const httpOptions ={
   headers:new HttpHeaders({'Content-Type':'Application/json'})
@@ -19,6 +15,10 @@ export class SharedService  {
   getCusAll()
   {
     return this.http.get<any>(this.APIurl+'Customers');
+  }
+  getCusbyName(name:string)
+  { 
+    return this.http.get(this.APIurl+'Customers/'+name);
   }
   addCustomer(val:any)
   {
