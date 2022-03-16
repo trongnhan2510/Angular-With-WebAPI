@@ -54,5 +54,11 @@ namespace StoreManagement.Repository
             Dispose(true);
             GC.SuppressFinalize(this);
         }
+
+        public IEnumerable<Customer> GetCustomersByName(string name)
+        {
+            var listCustomer = _context.Customers.Where(x => x.Customer_Name == name).ToList();
+            return listCustomer;
+        }
     }
 }

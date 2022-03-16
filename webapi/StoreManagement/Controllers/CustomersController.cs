@@ -27,15 +27,25 @@ namespace StoreManagement.Controllers
             var listCustomer = _customRepository.GetAllCustomer();
             return Ok(listCustomer);
         }
-        [HttpGet("{id}")]
-        public IActionResult GetByIDCustomer(int id)
+        //[HttpGet("{id}")]
+        //public IActionResult GetByIDCustomer(int id)
+        //{
+        //    var customer = _customRepository.GetByIDCustomer(id);
+        //    if (customer == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return Ok(customer);
+        //}
+        [HttpGet("{name}")]
+        public IActionResult GetByNameCustomer(string name)
         {
-            var customer = _customRepository.GetByIDCustomer(id);
-            if (customer == null)
+            var listCustomer = _customRepository.GetCustomersByName(name);
+            if (listCustomer == null)
             {
                 return NotFound();
             }
-            return Ok(customer);
+            return Ok(listCustomer);
         }
         [HttpPost]
         public IActionResult CreateNewCustomer(CustomerView customerView)

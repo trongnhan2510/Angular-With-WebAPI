@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Test\\WebApplication2\\StoreManagement\\StoreManagement.csproj": {}
+    "C:\\Test\\Angular-With-WebAPI\\webapi\\StoreManagement\\StoreManagement.csproj": {}
   },
   "projects": {
-    "C:\\Test\\WebApplication2\\StoreManagement\\StoreManagement.csproj": {
+    "C:\\Test\\Angular-With-WebAPI\\webapi\\StoreManagement\\StoreManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Test\\WebApplication2\\StoreManagement\\StoreManagement.csproj",
+        "projectUniqueName": "C:\\Test\\Angular-With-WebAPI\\webapi\\StoreManagement\\StoreManagement.csproj",
         "projectName": "StoreManagement",
-        "projectPath": "C:\\Test\\WebApplication2\\StoreManagement\\StoreManagement.csproj",
+        "projectPath": "C:\\Test\\Angular-With-WebAPI\\webapi\\StoreManagement\\StoreManagement.csproj",
         "packagesPath": "C:\\Users\\nhan.nguyen.trong\\.nuget\\packages\\",
-        "outputPath": "C:\\Test\\WebApplication2\\StoreManagement\\obj\\",
+        "outputPath": "C:\\Test\\Angular-With-WebAPI\\webapi\\StoreManagement\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

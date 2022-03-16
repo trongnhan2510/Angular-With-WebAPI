@@ -13,5 +13,6 @@ namespace StoreManagement.Repository
         Customer GetByIDCustomer(int id);
         void UpdateCustomer(Customer customer);
         void DeleteCustomer(int id);
+        IEnumerable<Customer> GetCustomersByName(string name);
     }
 }
